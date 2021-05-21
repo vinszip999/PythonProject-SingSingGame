@@ -6,7 +6,8 @@ def solution(number):
        current = i
        temp = count
        while current != 0:
-           if current % 10 == 3 or current % 10 == 6 or current % 10 == 9:
+           if current%10%3 == 0 and current%10 !=0:
+           # if current % 10 == 3 or current % 10 == 6 or current % 10 == 9
            # if current % 10 in [3, 6, 9]:
                count += 1
            current = current // 10
@@ -16,3 +17,4 @@ def solution(number):
 number = 40
 ret = solution(number)
 print(ret)
+
