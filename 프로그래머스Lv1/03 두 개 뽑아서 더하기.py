@@ -11,11 +11,10 @@ def solution(numbers):
             #  numbers[i]는 첫번째 선택한 숫자
             #  numbers[j]는 두번째 선택한 숫자
             plus_value = numbers[i] + numbers[j]  # 두 수의 합
-            if plus_value not in answer:  # 없으면
-                # list 끝부분에 값을 삽입
-                answer.append(plus_value)  # **
-    answer.sort()  # 정렬 **
-    return answer
+            answer.append(plus_value)
+    # answer.sort()  # 정렬 **
+    # set(집합) 처리를 하면서 중복제거와 오름차순 정렬을 깔끔하게 해결
+    return list(set(answer))  # 중복 제거
 
 
 def main():
