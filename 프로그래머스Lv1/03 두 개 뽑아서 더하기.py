@@ -11,9 +11,9 @@ def solution(numbers):
             #  numbers[i]는 첫번째 선택한 숫자
             #  numbers[j]는 두번째 선택한 숫자
             plus_value = numbers[i] + numbers[j]  # 두 수의 합
-            if (numbers[i] + numbers[j]) not in answer:  # 없으면
+            if plus_value not in answer:  # 없으면
                 # list 끝부분에 값을 삽입
-                answer.append(numbers[i] + numbers[j])  # **
+                answer.append(plus_value)  # **
     answer.sort()  # 정렬 **
     return answer
 
