@@ -216,26 +216,26 @@ Quiz1) 변수를 이용하여 다음 문장을 출력하시오
 # 10자리 이상이면 -1 리턴한다.
 
 
-def n_sum(argument):
-    str_num = str(argument) # 문자열로 바꿔줌
-    if (10 <= len(str_num)): # 배열의 길이 (문자열의 길이) len = 길이 구하는 함수
-        return -1
-    sum_value = 0
-    # for i in range(len(str_num)):   #range(3): i:0 1 2
-    #     sum_value += int(str_num[i])
-    for x in str_num : #str_num: '408'  x: '4' '0' '8'
-        sum_value += int(x)
-
-    return sum_value
-
-result = n_sum(10)
-print(result)        #1
-result = n_sum(331)
-print(result)         #7
-result = n_sum(408)
-print(result)         #12
-result = n_sum(1000000000)
-print(result)         #-1
+# def n_sum(argument):
+#     str_num = str(argument) # 문자열로 바꿔줌
+#     if (10 <= len(str_num)): # 배열의 길이 (문자열의 길이) len = 길이 구하는 함수
+#         return -1
+#     sum_value = 0
+#     # for i in range(len(str_num)):   #range(3): i:0 1 2
+#     #     sum_value += int(str_num[i])
+#     for x in str_num : #str_num: '408'  x: '4' '0' '8'
+#         sum_value += int(x)
+#
+#     return sum_value
+#
+# result = n_sum(10)
+# print(result)        #1
+# result = n_sum(331)
+# print(result)         #7
+# result = n_sum(408)
+# print(result)         #12
+# result = n_sum(1000000000)
+# print(result)         #-1
 
 # 선생님이랑 같이 한 것
 # def n_sum(n):
@@ -250,46 +250,46 @@ print(result)         #-1
 
 # Quiz3-2. get_subway_fare() 함수를 만든다. 이 함수는 인수로 가는 거리(km)를 숫자로 넣으면, 요금을 리턴한다.
 # * 지하철 요금계산법 10km 이내: 720원(청소년), 10~50km: 5km 마다 100원, 50km 초과 시 8km 마다 100원
-import math
-def get_subway_fare(km):
-    money = 720 # 남은 얘들은 계산할 수 없으니까 math.ceil 함수를 써서 반올림을 해주는 것이다.
-    if 10 < km and 50 >= km: # 11부터니까 km 에서 10을 빼주는 것이고, 5km 마다 이니까 끝이 5의 배수 0이나 5로 끝나니까 5로 나눠주는 것
-        money += math.ceil((km-10)/5)*100 # 10km 부터니까 -10을 한거고 5키로에 100원
-    elif km > 50:
-        money += 800 # 50km 까지 갔을 때가 800원
-        money += math.ceil((km-50)/8)*100
-    return money
-    # if 10 > km:
-    #     return money
-    #
-    # elif 10 < km or 50 > km:
-    #     while km % 5 == 0:
-    #         money = money + 100
-    #     return money
-
-    # for i in range(1, 50+1):
-
-fare = get_subway_fare(5)
-print(fare)        #720
-fare = get_subway_fare(26)
-print(fare)        #1120
-fare = get_subway_fare(61)
-print(fare)        #1720
+# import math
+# def get_subway_fare(km):
+#     money = 720 # 남은 얘들은 계산할 수 없으니까 math.ceil 함수를 써서 반올림을 해주는 것이다.
+#     if 10 < km and 50 >= km: # 11부터니까 km 에서 10을 빼주는 것이고, 5km 마다 이니까 끝이 5의 배수 0이나 5로 끝나니까 5로 나눠주는 것
+#         money += math.ceil((km-10)/5)*100 # 10km 부터니까 -10을 한거고 5키로에 100원
+#     elif km > 50:
+#         money += 800 # 50km 까지 갔을 때가 800원
+#         money += math.ceil((km-50)/8)*100
+#     return money
+#     # if 10 > km:
+#     #     return money
+#     #
+#     # elif 10 < km or 50 > km:
+#     #     while km % 5 == 0:
+#     #         money = money + 100
+#     #     return money
+#
+#     # for i in range(1, 50+1):
+#
+# fare = get_subway_fare(5)
+# print(fare)        #720
+# fare = get_subway_fare(26)
+# print(fare)        #1120
+# fare = get_subway_fare(61)
+# print(fare)        #1720
 
 # Quiz3-3. get_three_six_nine() 함수를 만든다. 이 함수에 숫자를 입력하면 369 게임에  해당하는 답변을 리턴한다.
 # * 369게임: 숫자의 어느 자리든 3 또는 6 또는 9가 있다면 그 갯수만큼 '짝'을 외치고, 아니면 그냥 숫자를 외친다.
 # 힌트: 문자열 함수 중에 특정 글자를 세는 함수가 있음
 
-def get_three_six_nine(number):
-    num = str(number)
-    count = 0
-    for i in num: # 31이면 숫자인가 짝인가
-
-        if (i == '3') or (i == '6') or (i == '9'):
-            count +=1
-    if count==0:
-        return number
-    return count * '짝'
+# def get_three_six_nine(number):
+#     num = str(number)
+#     count = 0
+#     for i in num: # 31이면 숫자인가 짝인가
+#
+#         if (i == '3') or (i == '6') or (i == '9'):
+#             count +=1
+#     if count==0:
+#         return number
+#     return count * '짝'
 
 # def get_three_six_nine(number):
 #     num = str(number)
@@ -320,14 +320,14 @@ def get_three_six_nine(number):
 #     else:
 #         return count_369 * '짝'
 #
-result = get_three_six_nine(1)
-print(result)        #1
-result = get_three_six_nine(3)
-print(result)        #짝
-result = get_three_six_nine(16)
-print(result)        #짝
-result = get_three_six_nine(36)
-print(result)        #짝짝
+# result = get_three_six_nine(1)
+# print(result)        #1
+# result = get_three_six_nine(3)
+# print(result)        #짝
+# result = get_three_six_nine(16)
+# print(result)        #짝
+# result = get_three_six_nine(36)
+# print(result)        #짝짝
 
 
 # Quiz3-4. 나만의 재미난 문제를 만들어보세요. 단, 조건이 있습니다.
@@ -339,14 +339,14 @@ print(result)        #짝짝
 
 # 펙토리아 계산기
 # 함수이름 : factoria(int형 숫자 하나 입력)
-def factoria(k):
-    result = 1
-    for i in range(2, k+1):
-        result *= i
-    return result
-print('펙토리아를 구할 숫자를 입력하세요 (ex 4) \n: ')
-k = int(input())
-print('결과는 : ' , factoria(k))
+# def factoria(k):
+#     result = 1
+#     for i in range(2, k+1):
+#         result *= i
+#     return result
+# print('펙토리아를 구할 숫자를 입력하세요 (ex 4) \n: ')
+# k = int(input())
+# print('결과는 : ' , factoria(k))
 
 # 4 입력시 결과는 : 24 (4x3x2x1)
 # 5 입력시 결과는 : 120 (5x4x3x2x1)
@@ -393,24 +393,24 @@ print('결과는 : ' , factoria(k))
 # 인수로 1개의 숫자를 받는다.
 # 인수로 넘어온 숫자가 소수(prime number)이면 "소수" 아니면, "소수 아님" 리턴한다.
 # '''
-def is_prime(num):
-    if num == 0 or num == 1:
-        return "소수아님"
-    else:
-        n = int(num ** 0.5)
-
-        for i in range(2, n + 1):
-            if num % i == 0:
-                return "소수아님"
-        return "소수"
-
-
-result = is_prime(2)
-print(result)     #소수
-result = is_prime(13)
-print(result)     #소수
-result = is_prime(36)
-print(result)     #소수 아님
+# def is_prime(num):
+#     if num == 0 or num == 1:
+#         return "소수아님"
+#     else:
+#         n = int(num ** 0.5)
+#
+#         for i in range(2, n + 1):
+#             if num % i == 0:
+#                 return "소수아님"
+#         return "소수"
+#
+#
+# result = is_prime(2)
+# print(result)     #소수
+# result = is_prime(13)
+# print(result)     #소수
+# result = is_prime(36)
+# print(result)     #소수 아님
 
 
 # '''
@@ -419,30 +419,98 @@ print(result)     #소수 아님
 # '놀랄 만한', '황당한', '굉장한'이 들어가는 말을 입력하면 '요모야..!', 특정 단어가 하나라도 들어가지 않는다면 '으무!'를 리턴한다.
 # '''
 
-def get_compliment(answer):
-    if '고구마' in answer:
-        return '왓쇼이!'
-    elif '맛있는' in answer:
-        return '우마이!'
-    # elif '놀랄 만한' or '황당한' or '굉장한' in answer:
-    #     return '요모야..!'
-    elif '놀랄 만한' in answer:
-        return '요모야..!'
-    elif '황당한' in answer:
-        return '요모야..!'
-    elif '굉장한' in answer:
-        return '요모야..!'
-    else:
-        return '으무!'
+# def get_compliment(answer):
+#     if '고구마' in answer:
+#         return '왓쇼이!'
+#     elif '맛있는' in answer:
+#         return '우마이!'
+#     # elif '놀랄 만한' or '황당한' or '굉장한' in answer:
+#     #     return '요모야..!'
+#     elif '놀랄 만한' in answer:
+#         return '요모야..!'
+#     elif '황당한' in answer:
+#         return '요모야..!'
+#     elif '굉장한' in answer:
+#         return '요모야..!'
+#     else:
+#         return '으무!'
+#
+#
+# result = get_compliment('고구마 된장국')
+# print(result) # 왓쇼이!
+# result = get_compliment('맛있는 크레이프')
+# print(result) # 우마이!
+# result = get_compliment('놀랄 만한 상황')
+# print(result) # 요모야..!
+# result = get_compliment('좋은 마음가짐이다!')
+# print(result) # 으무!
 
 
-result = get_compliment('고구마 된장국')
-print(result) # 왓쇼이!
-result = get_compliment('맛있는 크레이프')
-print(result) # 우마이!
-result = get_compliment('놀랄 만한 상황')
-print(result) # 요모야..!
-result = get_compliment('좋은 마음가짐이다!')
-print(result) # 으무!
 
+# ------------------------------------
+# 2학기 첫 시작 !
+
+
+'''
+Quiz5-1. 모듈이란?
+
+어떤 필요한 것들끼리 부품처럼 잘 만들어진 파일이다.
+예를들어, 만약 자동차를 이용하다가 타이어가 마모되거나 펑크가 났을 때 타이어만 교체하면 되는 것과,
+혹은 사고가 났는데 범퍼만 파손된 상황에서 범퍼만 교체하면 되는 것과 같다.
+이런식으로 소프트웨어도 타이어나 범퍼처럼 부품만 교체하거나 추가할 수 있도록 만들면 유지보수가 쉽고 코드의 재사용도 수월해지는 장점이 있다.
+
+정리하면, 딱 필요한 것들끼리 부품처럼 잘 만드는 것이 모듈화이고,
+함수정의나 클래스 등의 어떤 파이썬 문장들을 담고 있는 파일을 모듈이라고 한다.
+그리고 확장자는 .py 이다.
+
+
+
+Quiz5-2. 패키지란?
+
+모듈들을 모아놓은 집합이다.
+하나의 디렉토리에 여러 모듈 파일들을 가져다 놓은 것이라고 이해하면 된다.
+
+
+
+Quiz5-3. theater_module.py 모듈(파일)의 price 함수를 p학번 이라는 이름으로 호출 하도록 import문을 작성하세요
+
+from theater_module import price as p
+
+
+
+Quiz5-4. __all__의 역할은?
+
+파이썬은 패키지 내에서 import가 되기를 원하는 것만 공개를 하고, 
+원하지 않는 것은 비공개로 설정할 수 있는데, 
+__all__은 공개가 되기를 원하는 내용만 공개할 수 있도록 만들어 주는 역할을 한다.
+
+
+
+Quiz5-5. 지금 파이썬 파일을 직접실행할 때만 실행되고, 다른 모듈에서 import할 때는 실행되지 않도록 하는 제어문은?
+
+if __name__ == "__main__"
+
+
+
+Quiz5-6. travel 패키지(폴더) 안에 vietnam.py 모듈(파일) 안의 VietnamPackage 클래스를 생성하고 detail 함수를 호출하는 < 가 >, < 나 >, < 다 > 에 들어갈 각 방법은?
+
+
+import travel.vietnam
+< 가 > 
+trip_to = travel.vietnam.VietnamPackage()
+trip_to.detail()
+
+
+from travel import vietnam
+< 나 > 
+trip_to = vietnam.VietnamPackage()
+trip_to.detail()
+
+
+
+from travel.vietnam import VietnamPackage
+< 다 > 
+trip_to = VietnamPackage()
+trip_to.detail()
+'''
 

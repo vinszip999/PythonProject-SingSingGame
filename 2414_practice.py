@@ -353,7 +353,7 @@
 # menu = set(menu)
 # print(menu, type(menu))
 
-#if
+# if
 # weather = input("오늘 날씨는 어때요? ")
 # if weather == "비" or weather == "눈":
 #     print("우산을 챙기세요")
@@ -372,7 +372,7 @@
 # else:
 #     print("너무 추워요. 나가지 마세요")
 
-#for
+# for
 # print("대기번호 : 1")
 # print("대기번호 : 2")
 
@@ -584,7 +584,7 @@
 # marine3 = Unit("마린")
 # marine3 = Unit("마린", 40)
 
-#===========================================
+# ===========================================
 # 멤버변수
 # class Unit:
 #     def __init__(self, name, hp, damage):
@@ -605,7 +605,7 @@
 # if wraith2.cloaking == True:
 #     print("{0}는 현재 클로킹 상태입니다.".format(wraith2.name))
 
-#===========================================
+# ===========================================
 # 메소드
 # class AttackUnit: # 공격 유닛
 #     def __init__(self, name, hp, damage):
@@ -632,7 +632,7 @@
 # firebat1.damaged(25)
 # firebat1.damaged(25)
 
-#===========================================
+# ===========================================
 # 상속
 # 일반 유닛
 # class Unit:
@@ -666,7 +666,7 @@
 # firebat1.damaged(25)
 # firebat1.damaged(25)
 
-#===========================================
+# ===========================================
 # 다중 상속
 # 일반 유닛
 # class Unit:
@@ -712,7 +712,7 @@
 # valkyrie = FlyableAttackUnit("발키리", 200, 6, 5) # 이름, 체력, 공격력, 공중 이동 속도
 # valkyrie.fly(valkyrie.name, "3시") # 3시 방향으로 발키리를 이동
 
-#===========================================
+# ===========================================
 # 메소드 오버라이딩
 # # 일반 유닛
 # class Unit:
@@ -774,7 +774,7 @@
 # # battlecruiser.fly(battlecruiser.name, "9시")
 # battlecruiser.move("9시") # 오버라이딩된 move() 호출
 
-#===========================================
+# ===========================================
 # pass
 # # 일반 유닛
 # class Unit:
@@ -843,7 +843,7 @@
 # game_start()
 # game_over()
 
-#===========================================
+# ===========================================
 # super
 # # 일반 유닛
 # class Unit:
@@ -902,7 +902,7 @@
 #         self.location = location
 
 
-#===========================================
+# ===========================================
 # 스타크래프트 프로젝트 전반전
 # # 일반 유닛
 # class Unit:
@@ -1004,7 +1004,7 @@
 #                 print("{0} : 클로킹 모드 설정합니다.".format(self.name))
 #                 self.cloaked = True
 
-#===========================================
+# ===========================================
 # 스타크래프트 프로젝트 후반전
 # from random import *
 #
@@ -1167,4 +1167,91 @@
 # game_over()
 
 
+# ----------------------------------
+# 2학기 첫 시작 !
 
+# <모듈>
+
+# import theater_module
+# theater_module.price(3)  # 3명이서 영화 보러 갔을 때 가격
+# theater_module.price_morning(4)  # 4명이서 조조 할인 영화 보러 갔을 때
+# theater_module.price_soldier(5)  # 5명의 군인이 영화 보러 갔을 때
+
+# import theater_module as mv  # 모듈에 mv 라는 별명을 붙여주어서 코드를 줄일 수 있는 것!
+# # c언어의 구조체에서 별명을 붙여주는 것과 비슷함!
+# mv.price(3)
+# mv.price_morning(4)
+# mv.price_soldier(5)
+
+# from theater_module import *  # theater_module 에 있는 모든 걸 사용하겠다.
+# # from random import *
+# price(3)
+# price_morning(4)
+# price_soldier(5)
+
+# from theater_module import price, price_morning  # price 함수와 price_morning 함수만 가져다 쓰겠다는 뜻!
+# price(5)
+# price_morning(6)
+
+# from theater_module import price_soldier as price
+# # price_soldier 함수를 "price"라는 별명 붙여쓰는 방법!
+# price(5)
+
+
+# <패키지>
+
+# import travel.thailand # thailand 부분은 항상 모듈이나 패키지만 가능하다.
+# trip_to = travel.thailand.ThailandPackage()
+# trip_to.detail()
+
+# from travel.thailand import ThailandPackage  # 이 구문에선 모듈이나 패키지, 클래스 함수 모두 import 할 수 있다.
+# trip_to = ThailandPackage()
+# trip_to.detail()
+
+# from travel import vietnam
+# trip_to = vietnam.VietnamPackage()
+# trip_to.detail()
+
+
+# <__all__>
+
+# from random import *  # random 모듈 안에 있는 모든 것들을 다 사용하겠다.
+
+# from travel import *  # *을 쓰는 것은 travel 패키지 안에 있는 모든 것들을 가져오겠다.
+
+# **실제로는 개발자가 이 문법 상애서 공개범위를 설정해주어야 한다.**
+# 이 말은 패키지 내에서 import 되기를 원하는 것만 공개를 하고,
+# 원하지 않는 것은 비공개로 설정을 할 수 있다는 말이다.
+
+# trip_to = vietnam.VietnamPackage()
+# trip_to = thailand.ThailandPackage()
+# trip_to.detail()
+
+
+# <모듈 직접 실행>
+
+# if __name__ == "__main__" 제어문을 사용할 수 있다.
+
+# thailand.py 파일에서의 if __name__ == "__main__" 사용 예시
+# >>>
+# if __name__ == "__main__":  # __name__이 만약 "__main__" 이면,
+#     print("Thailand 모듈을 직접 실행")
+#     # thailand.py 에서 코드를 수정하고 직접 실행했을 때 이 구문이 실행된다.
+#
+#     print("이 문장은 모듈을 직접 실행할 때만 실행이 됩니다.")
+#     trip_to = ThailandPackage()
+#     trip_to.detail()
+# else:
+#     print("Thailand 외부에서 모듈 호출")
+#     # practice.py 에서 thailand.py 를 가져다 쓸 때에는 이 구문이 실행된다.
+
+# 정리 : practice.py 에서 thailand.py 를 가져다 쓸 때에는 else 구문의 문장 내용이 실행되고,
+# thailand.py 에서 직접 이 내용을 실행할 때는 if 구문의 문장 내용이 실행된다.
+
+
+# <패키지, 모듈 위치>
+# import inspect
+# import random
+# print(inspect.getfile(random))
+# # random 이라는 모듈이 어느 위치에 있는지, 파일 정보를 알려준다.
+# print(inspect.getfile(thailand))
