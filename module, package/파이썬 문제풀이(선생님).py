@@ -57,12 +57,36 @@ today_2 = datetime.date.today()
 my_b_day = datetime.date(2021, 11, 29)
 print("내 생일이 며칠이 남았는가? ", my_b_day - today_2)
 
-# 내 생일이 이미 지났을 때 쓰는 방법 *
-if my_b_day < now:  # 만약 now 가 my_b_day 보다 과거라면
-    my_b_day = my_b_day.replace(year=2022)
-print(my_b_day - today_2)
+# # 내 생일이 이미 지났을 때 쓰는 방법 *
+# if my_b_day < now:  # 만약 now 가 my_b_day 보다 과거라면
+#     my_b_day = my_b_day.replace(year=2022)
+# print(my_b_day - today_2)
+
 # 8.
 # 랜덤하게 번호로 자리를 배치하는 방법은?
 # 제적(전출, 자퇴) 인원이 있다면?
+
+# 마지막 번호 묻기
+last_number = input("마지막 번호는? ")
+# 1부터 마지막 번호까지 숫자 리스트 만들기
+list_class = list(range(1, int(last_number) + 1))
+# print(list_class)
+# 반복
+while True:
+#   뺄 번호 묻기
+    exclude_number = input("뺄 번호는? (enter치면 그만 빼기) ")
+#   다 뺐으면 반복 끝내기
+    if exclude_number == '':
+        break
+#   빼기
+    list_class.remove(int(exclude_number))
+# 섞기
+random.shuffle(list_class)
+# 출력하기
+print('<자리>\t<학생번호>')
+for i, number in enumerate(list_class):
+    print(f' {i+1}\t\t\t{number}')
+
+
 
 
