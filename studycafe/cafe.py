@@ -74,7 +74,7 @@ class Cafe:
     def show_empty_seat_list(self):
         if len(self.empty_seat_list) == 0:
             for seat in self.seat_list:  # 전체 자리에서 하나씩 꺼냄
-                if seat.checkin is None:  # checkin 정보가 없으면
+                if seat.checkin is None:  # checkin 정보가 없으면,
                     self.empty_seat_list.append(seat.position)  # 빈자리 리스트에 추가
         print(sorted(self.empty_seat_list))
 
