@@ -33,7 +33,7 @@ class Cafe:
             print('<입실 가능한 좌석>')
             self.show_empty_seat_list()  # 빈자리 보여주기
             print('-'*30)
-            self.checkin_position = input('1~10까지 입실 가능한 좌석 중 사용할 좌석을 선택하세요 ex) 1 : ')  # 자리선택하기
+            self.checkin_position = input('1~10까지 입실 가능한 좌석 중 사용할 좌석을 선택하세요 ex) 1 : ')  # 자리 선택하기
             self.checkin_position = int(self.checkin_position)
             new_checkin = Checkin()  # Checkin 생성하기
             new_checkin.set_random_number()  # checkin 랜덤넘버 생성하기

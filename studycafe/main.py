@@ -2,12 +2,12 @@ from studycafe.cafe import Cafe
 
 
 def print_menu():
-    print('--------------------\n'
-          '<<mirim 스터디 카페>>')
+    print('-'*20)
+    print('<<mirim 스터디 카페>>')
     print('1. 입실하기')
     print('2. 퇴실하기')
     print('3. 종료')
-    print('--------------------')
+    print('-'*20)
     num = input('>> 메뉴를 선택하세요: ')
     return num
 
