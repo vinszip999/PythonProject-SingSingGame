@@ -9,16 +9,28 @@ def make_answer():
 def check(guess, answer):
     strike = 0
     ball = 0
+
     # 숫자 하나 꺼내서 정답에 있고, 자리가 같으면, strike += 1
     # 숫자 하나 꺼내서 정답에 있고, 자리가 다르면, ball += 1
 
     # 첫번째 방법
-    for i in range(3):
-        for j in range(3):
-            if guess[i] == answer[j]:
-                if i == j:
+    # for i in range(3):
+    #     for j in range(3):
+    #         if guess[i] == answer[j]:
+    #             if i == j:
+    #                 strike += 1
+    #             else:
+    #                 ball += 1
+    #
+    # return strike, ball
+
+    # 두번째 방법
+    for i, g in enumerate(guess):
+        for j, a in enumerate(answer):
+            if g == a:  # 숫자가 같으면
+                if i == j:  # 자리가 같으면
                     strike += 1
-                else:
+                else:  # 자리가 다르면
                     ball += 1
 
     return strike, ball
@@ -33,7 +45,3 @@ if __name__ == '__main__':
     print(strike, ball)  # 1 1
     strike, ball = check("934", "934")
     print(strike, ball)  # 3 0
-
-
-
-
