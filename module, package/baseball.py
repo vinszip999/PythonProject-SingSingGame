@@ -1,10 +1,12 @@
+from baseball_game_engine import make_answer, check
+
 answer = make_answer()
-print(answer)
+# print(answer)
 
 # number = random.sample(range(0, 9), 3)
 # print(str(number[0]) + str(number[1]) + str(number[2]))
 
-#무한반복
+# 무한반복
 while True:
     # 숫자 묻자
     guess = input("숫자를 입력하세요 : ")
