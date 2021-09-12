@@ -102,7 +102,7 @@
 
 # 14.슬라이싱을 사용해서 리스트의 숫자를 역 방향으로 출력하라.
 # nums = [1, 2, 3, 4, 5]
-nums = [1, 2, 3, 4, 5]
+# nums = [1, 2, 3, 4, 5]
 # nums.reverse()
 # print(nums)
 
@@ -111,5 +111,81 @@ nums = [1, 2, 3, 4, 5]
 # print(a)
 
 # 선생님 방법 2 (원본 유지) 강추!!!
-a = list(reversed(nums))
-print(a)
+# a = list(reversed(nums))
+# print(a)
+
+
+# 15.interest 리스트에는 아래의 데이터가 바인딩되어 있다.
+# interest = ['삼성전자', 'LG전자', 'Naver', 'SK하이닉스', '미래에셋대우']
+#
+# interest 리스트를 사용하여 아래와 같이 화면에 출력하라.
+# 출력 예시:
+# 삼성전자/LG전자/Naver/SK하이닉스/미래에셋대우
+
+# a = '/'.join(interest)
+# print(a)
+
+
+# 선생님 방법 1
+# string = ""
+# string += (interest[0] + "/")
+# string += (interest[1] + "/")
+# string += (interest[2] + "/")
+# string += (interest[3] + "/")
+# string += (interest[4] + "/")
+# print(string[:-1])
+
+# 선생님 방법 2 (반복문 사용)
+# string = ""
+# for x in interest:
+#     string += (x+"/")
+# print(string[:-1])
+
+# 선생님 방법 3
+# a = "/".join(interest)
+# print(a)
+
+
+
+# 16.회사 이름이 슬래시 ('/')로 구분되어 하나의 문자열로 저장되어 있다.
+# string = "삼성전자/LG전자/Naver"
+# //4반
+# 이를 interest 이름의 리스트로 분리 저장하라.
+# 실행 예시
+# >> print(interest)
+# ['삼성전자', 'LG전자', 'Naver']
+
+# a = string.split('/')
+# print(a)
+
+
+# 17.리스트에 있는 값을 오름차순으로 정렬하세요.
+data = [2, 4, 3, 1, 5, 10, 9]
+
+# 첫번째 방법
+# a = sorted(data)  # 원본 유지
+# print(a)
+
+# 두 번째 방법
+data.sort()
+print(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
