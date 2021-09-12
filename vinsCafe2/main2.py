@@ -1,6 +1,4 @@
-from vinsCafe.vCafe import VCafe
-# from vinsCafe.vCafe import Drink
-# from vinsCafe.vCafe import SideMenu
+from vinsCafe2.vCafe2 import VCafe
 
 
 def print_menu():
@@ -19,8 +17,6 @@ def print_menu():
 def main():
 
     cafemenu = VCafe()
-    # drinkmenu = Drink()
-    # sidemenu = SideMenu()
 
     while True:
         number = print_menu()
@@ -32,38 +28,24 @@ def main():
             cafemenu.show_drink_menu()
             # 음료수 선택하기
             cafemenu.choice_drink()
-            # 음료수 결제하기
-            cafemenu.drink_payment()
-            # 사이드 메뉴 추가 여부 물어보기, 추가한다면, 메뉴판 보여주기, 메뉴 선택하기
+            # 사이드 메뉴 추가 여부 물어보기
             cafemenu.add_side_menu()
-            # 사이드 메뉴 결제하기
-            # sidemenu.side_menu_payment()
 
-            # 사이드 메뉴를 추가한다면
+            # 결제하기
+            cafemenu.payment()
+            # 좌석 고르기
+            cafemenu.choice_seat()
 
-            # 사이드 메뉴판 보여주기
-            # sidemenu.show_side_menu()
-            #
-            # # 사이드 메뉴 선택하기
-            # sidemenu.choice_side_menu()
-
-            # 사이드 메뉴 추가 안하면
+            # 음료수, 사이메뉴 + 보안번호, 좌석 확인
+            cafemenu.check_drink()
 
             # 영수증 보여주기 ("~ 음료수 ( ~ 사이드 메뉴) 맞으십니까?")
             cafemenu.all_show_receipt()
 
-            # 결제하기
-            cafemenu.payment()
-
-            # 좌석 고르기
-            cafemenu.choice_seat()
-            # 음료수, 사이드메뉴 + 보안번호, 좌석 확인
-            # cafemenu.all_show_receipt()
-
         # 2. 음료수 종류 추가
         elif number == '2':
             # 어떤 타이틀 음료수 메뉴 추가할건지 물어보기 ("1. 커피, 2. 라떼, 3. 스무디, 4. 티, 5. 에이드 메뉴 중 어떤 메뉴의 음료수를 추가하시겠습니까?")
-            cafemenu.add_drink_menu()
+            cafemenu.add_drink_Menu()
 
         # 3. 음료수 반납
         elif number == '3':
