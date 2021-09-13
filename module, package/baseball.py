@@ -1,5 +1,5 @@
 from baseball_game_engine import make_answer, check
-from custom_error import InvalidLengthError
+# from custom_error import InvalidLengthError
 answer = make_answer()
 # print(answer)
 
@@ -17,9 +17,9 @@ while True:
         print('*** 숫자를 입력하세요 ***')
         continue
     if len(guess) != len(answer):  # 3
-        raise InvalidLengthError('정답의 길이와 다른 것을 입력했습니다.')
-        # print(f'정답의 길이와 다른 것을 입력했습니다. {len(answer)} 문자')
-        # continue
+        # raise InvalidLengthError('정답의 길이와 다른 것을 입력했습니다.')
+        print(f'정답의 길이와 다른 것을 입력했습니다. {len(answer)} 문자')
+        continue
 
     # print(guess_int)
     # strike, ball 판정하자
