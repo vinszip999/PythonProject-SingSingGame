@@ -246,10 +246,10 @@ class VCafe:
             else:
                 print('*** 올바른 금액을 입력해주세요 ***')
 
-    side_sum = 0
-    side_menu = []
-    cake = ["티라미슈", "초코케잌", "치즈케잌", "녹차케잌"]
-    sandwich = ["참치샌드위치", "모닝샌드위치", "야채샌드위치"]
+    # side_sum = 0
+    # side_menu = []
+    # cake = ["티라미슈", "초코케잌", "치즈케잌", "녹차케잌"]
+    # sandwich = ["참치샌드위치", "모닝샌드위치", "야채샌드위치"]
 
     # 사이드 메뉴 추가 여부 물어보기
     def add_side_menu(self):
@@ -334,21 +334,36 @@ class VCafe:
                               ' << 나가려면 "esc"를 치세요 >> ')
                         print('-' * 30)
 
-                print(f'고객님이 고르신 {self.side_menu}의 가격은 {self.side_sum}원 입니다.')
-                while True:
-                    side_pay = int(input('결제 금액을 입력하세요 : '))
-                    if side_pay == self.side_sum:
-                        print(f'성공적으로 {self.side_menu} 결제가 완료되었습니다~')
-                        break
-                    else:
-                        print('*** 올바른 금액을 입력해주세요 ***')
-                break
+                # print(f'고객님이 고르신 {self.side_menu}의 가격은 {self.side_sum}원 입니다.')
+                # while True:
+                #     side_pay = int(input('결제 금액을 입력하세요 : '))
+                #     if side_pay == self.side_sum:
+                #         print(f'성공적으로 {self.side_menu} 결제가 완료되었습니다~')
+                #         break
+                #     else:
+                #         print('*** 올바른 금액을 입력해주세요 ***')
+                # break
 
             elif add_sidemenu == 'no':
                 break
 
             else:
                 print(' *** "yes, no" 중 다시 고르세요 ***')
+
+    def payment(self):
+        print('아니 이거 왜 안돼')
+        # print(f'고객님이 고르신 {self.drink_menu}의 가격은 : ', self.drink_sum)
+        # if len(self.side_menu) == 1:
+        #     print(f'고객님이 고르신 {self.side_menu}의 가격은 : ', self.side_sum)
+        # pay_sum = self.drink_sum + self.drink_sum
+        # while True:
+        #     drink_side_pay = int(input('결제 금액을 입력하세요 : '))
+        #     if drink_side_pay == pay_sum:
+        #         print(f'성공적으로 결제가 완료되었습니다~')
+        #         break
+        #     else:
+        #         print('*** 올바른 금액을 입력해주세요 ***')
+
 
     # 영수증 보여주기 ("~ 음료수 ( ~ 사이드 메뉴) 맞으십니까?")
     def all_show_receipt(self):
@@ -383,8 +398,8 @@ class VCafe:
                 print('*** 이미 사용중인 좌석입니다. 미사용 좌석으로 다시 골라주세요 *** ')
 
     # 결제하기
-    def payment(self):
-        pass
+    # def payment(self):
+    #     pass
         # Drink.choice_drink(self.drink_sum)
 
     # ("몇번자리: 음료수는 : 보안번호는 : ") 맞으면 퇴실처리, 틀리면 반복하거나 종료

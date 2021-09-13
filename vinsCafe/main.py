@@ -33,12 +33,12 @@ def main():
             # 음료수 선택하기
             cafemenu.choice_drink()
             # 음료수 결제하기
-            cafemenu.drink_payment()
+            # cafemenu.drink_payment()
             # 사이드 메뉴 추가 여부 물어보기, 추가한다면, 메뉴판 보여주기, 메뉴 선택하기
             cafemenu.add_side_menu()
             # 사이드 메뉴 결제하기
             # sidemenu.side_menu_payment()
-
+            cafemenu.payment()
             # 사이드 메뉴를 추가한다면
 
             # 사이드 메뉴판 보여주기
@@ -53,7 +53,7 @@ def main():
             cafemenu.all_show_receipt()
 
             # 결제하기
-            cafemenu.payment()
+            # cafemenu.payment()
 
             # 좌석 고르기
             cafemenu.choice_seat()
