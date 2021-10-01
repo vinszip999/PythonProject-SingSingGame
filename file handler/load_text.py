@@ -5,6 +5,10 @@ data = f.read()
 f.close()
 print(data)
 
+with open('text.txt', 'r', encoding='utf-8') as f:
+    data = f.read()
+print(data)
+
 print('<한 줄식 읽기>')  # 제일 많이 쓰이는 방법
 
 f = open('text.txt', 'r', encoding='utf-8')
