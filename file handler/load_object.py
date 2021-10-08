@@ -7,7 +7,7 @@ print(p1.name)
 print(p1.color)
 
 #객체 여러 개 불러오기
-with open('object.bin', 'rb') as f:
+with open('objects.bin', 'rb') as f:
     people = pickle.load(f)
 # print(people)
 # print(people[0])
