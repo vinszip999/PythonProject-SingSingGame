@@ -6,6 +6,7 @@ answer = make_answer()
 # number = random.sample(range(0, 9), 3)
 # print(str(number[0]) + str(number[1]) + str(number[2]))
 
+count = 0
 # 무한반복
 while True:
     # 숫자 묻자
@@ -24,8 +25,9 @@ while True:
     # print(guess_int)
     # strike, ball 판정하자
     strike, ball = check(guess, answer)
+    count+=1
     # 출력하자
-    print(f'{guess}\tstrike : {strike}, ball : {ball}')
+    print(f'{guess}\tstrike : {strike}, ball : {ball}\t{count}try')
     # 정답 == 숫자, 끝내기
     if answer == guess:
         print('정답입니다!!')
