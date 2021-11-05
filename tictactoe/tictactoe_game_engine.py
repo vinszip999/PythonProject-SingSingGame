@@ -33,20 +33,20 @@ class TictactoeGameEngine:
                     == self.board[self.position_to_index(row, 2)] \
                     == self.board[self.position_to_index(row, 3)] \
                     == self.turn:
-                return '-'
+                return self.turn
         # | 3줄
         for col in range(1, 3 + 1):
             if self.board[self.position_to_index(1, col)] \
                     == self.board[self.position_to_index(2, col)] \
                     == self.board[self.position_to_index(3, col)] \
                     == self.turn:
-                return '|'
+                return self.turn
         # /
         if self.board[self.position_to_index(1, 3)] \
                 == self.board[self.position_to_index(2, 2)] \
                 == self.board[self.position_to_index(3, 1)] \
                 == self.turn:
-            return '/'
+            return self.turn
         # \
         # 무승부: 위의 조건 다 통과
         # , 더이상 놓을 자리가 없음: self.board에 빈칸이 없음: self.board에 '.' 없음
@@ -72,21 +72,24 @@ class TictactoeGameEngine:
         # /, \
 
         # /
-        if self.board[2] == 'X' and self.board[4] == 'X' and self.board[6] == 'X':
-            return print('X 승리')
-        if self.board[2] == 'O' and self.board[4] == 'O' and self.board[6] == 'O':
-            return print('O 승리')
-        # \
-        if self.board[0] == 'X' and self.board[4] == 'X' and self.board[8] == 'X':
-            return print('X 승리')
-        if self.board[0] == 'O' and self.board[4] == 'O' and self.board[8] == 'O':
-            return print('O 승리')
+        # if self.board[2] == 'X' and self.board[4] == 'X' and self.board[6] == 'X':
+        #     return print('X 승리')
+        # if self.board[2] == 'O' and self.board[4] == 'O' and self.board[6] == 'O':
+        #     return print('O 승리')
+        # # \
+        # if self.board[0] == 'X' and self.board[4] == 'X' and self.board[8] == 'X':
+        #     return print('X 승리')
+        # if self.board[0] == 'O' and self.board[4] == 'O' and self.board[8] == 'O':
+        #     return print('O 승리')
+        #
+        # # 끝나는 경우 : 무승부(승자가 없는 상태로 놓을 자리가 없음), 승자 결정(승자가 있음)
+        # if self.board[0] != '.' and self.board[1] != '.' and self.board[2] != '.' and \
+        #         self.board[3] != '.' and self.board[4] != '.' and self.board[5] != '.' and \
+        #         self.board[6] != '.' and self.board[7] != '.' and self.board[8] != '.':
+        #     return print('무승부')
 
-        # 끝나는 경우 : 무승부(승자가 없는 상태로 놓을 자리가 없음), 승자 결정(승자가 있음)
-        if self.board[0] != '.' and self.board[1] != '.' and self.board[2] != '.' and \
-                self.board[3] != '.' and self.board[4] != '.' and self.board[5] != '.' and \
-                self.board[6] != '.' and self.board[7] != '.' and self.board[8] != '.':
-            return print('무승부')
+        if not '.' in self.board:
+            return 'd'  # draw
 
     def change_turn(self):
         # if self.turn == 'X':
@@ -99,10 +102,8 @@ class TictactoeGameEngine:
 
 if __name__ == '__main__':
     game_engine = TictactoeGameEngine()
-    game_engine.show_board()    # ...\n...\n...
     game_engine.show_board()  # ...\n...\n...
     game_engine.set(2, 2)
-    game_engine.show_board()    # ['.', '.', '.', '.', 'X', '.', '.', '.', '.']
     game_engine.show_board()  # ['.', '.', '.', '.', 'X', '.', '.', '.', '.']
     game_engine.set(2, 1)
     game_engine.set(2, 3)
@@ -110,7 +111,7 @@ if __name__ == '__main__':
     game_engine.board = ['.', '.', '.', 'X', 'X', 'X', '.', '.', '.']
     game_engine.set_winner()  # '-'  -> 'X'
     game_engine.change_turn()
-    print(game_engine.turn)     # 'O'
     print(game_engine.turn)  # 'O'
     game_engine.change_turn()
     print(game_engine.turn)  # 'X'
+
