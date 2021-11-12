@@ -9,7 +9,7 @@ class TictactoeGameEngine:
         # print('  '.join(self.board[3:6]))
         # print('  '.join(self.board[6:9]))
         for i, v in enumerate(self.board):
-            print(v + '  ', end='')
+            print(v + '  ', end='')  # 내려쓰기
             if i % 3 == 2:
                 print()
 
