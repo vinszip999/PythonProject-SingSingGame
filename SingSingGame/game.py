@@ -35,11 +35,24 @@ class Game:
                 print('** 1~6 이상의 인원수를 다시 골라주세요 **')
                 continue
 
+    # def turn_user(self):
+    #     # 랜덤함수 돌려서 순서 정하기
+    #     # rn = random.randint(1, self.user_num)
+    #     # print(rn)
+    #     pass
+
     def turn_user(self):
         # 랜덤함수 돌려서 순서 정하기
-        # rn = random.randint(1, self.user_num)
-        # print(rn)
-        pass
+        while True:
+            alist = []
+            for i in range(1):
+                rn = random.choice(self.user_name)
+                while rn in alist:
+                    rn = random.choice(self.user_name)
+                alist.append(rn)
+            print(rn)
+            print(f'{rn}차례입니다.')
+            break
 
     def genre_songs(self):
         # 노래 장르 선택하기 (발라드, 대중가요)
@@ -48,44 +61,34 @@ class Game:
             if choice_song == "대중가요":
                 print("지금부터 SingSingGame - 대중가요(k-pop) 버전이 시작됩니다!")
                 print('-' * 50)
+                length = len(self.kpop_singer)
                 while True:
-                    # kpop_list = random.sample(self.kpop_song, 1)
-                    # print(kpop_list)
-                    for i in self.kpop_song:
-                        for j in self.kpop_singer:
-                            for k in self.kpop_name:
-                                print(f'<다음 노래 가사를 보고 가수와 곡 제목을 쓰세요>\n {i}')
-                                user_singer_answer = input("가수 : ")
-                                user_song_name = input("곡 제목 : ")
-                                if user_singer_answer == j and user_song_name == k:
-                                    print("축하합니다!! 정답을 맞추셨습니다. ")
-                                    break
-                                elif user_singer_answer == j or user_song_name == k:
-                                    print("안타깝게 정답을 틀리셨습니다ㅠㅠ")
-                                    break
-                            break
-                        break
+                    for i in range(length):
+                        print(f'<다음 노래 가사를 보고 가수와 곡 제목을 쓰세요>\n {self.kpop_song[i]}')
+                        user_singer_answer = input("가수 : ")
+                        user_song_name = input("곡 제목 : ")
+                        if user_singer_answer == self.kpop_singer[i] and user_song_name == self.kpop_name[i]:
+                            print("축하합니다!! 정답을 맞추셨습니다. ")
+                        elif user_singer_answer == self.kpop_singer[i] or user_song_name == self.kpop_name[i]:
+                            print("안타깝게 정답을 틀리셨습니다ㅠㅠ")
+                        else:
+                            print("정답을 틀리셨습니다.")
 
             elif choice_song == "발라드":
                 print("지금부터 SingSingGame - 발라드 버전이 시작됩니다!")
                 print('-' * 50)
+                length = len(self.ballade_singer)
                 while True:
-                    # kpop_list = random.sample(self.kpop_song, 1)
-                    # print(kpop_list)
-                    for i in self.ballade_song:
-                        for j in self.ballade_singer:
-                            for k in self.ballade_name:
-                                print(f'<다음 노래 가사를 보고 가수와 곡 제목을 쓰세요>\n {i}')
-                                user_singer_answer = input("가수 : ")
-                                user_song_name = input("곡 제목 : ")
-                                if user_singer_answer == j and user_song_name == k:
-                                    print("축하합니다!! 정답을 맞추셨습니다. ")
-                                    break
-                                elif user_singer_answer == j or user_song_name == k:
-                                    print("안타깝게 정답을 틀리셨습니다ㅠㅠ")
-                                    break
-                            break
-                        break
+                    for i in range(length):
+                        print(f'<다음 노래 가사를 보고 가수와 곡 제목을 쓰세요>\n {self.ballade_song[i]}')
+                        user_singer_answer = input("가수 : ")
+                        user_song_name = input("곡 제목 : ")
+                        if user_singer_answer == self.ballade_singer[i] and user_song_name == self.ballade_name[i]:
+                            print("축하합니다!! 정답을 맞추셨습니다. ")
+                        elif user_singer_answer == self.ballade_singer[i] or user_song_name == self.ballade_name[i]:
+                            print("안타깝게 정답을 틀리셨습니다ㅠㅠ")
+                        else:
+                            print("정답을 틀리셨습니다.")
 
             else:
                 print("** 발라드와 대중가요 중 선택하세요 **")
