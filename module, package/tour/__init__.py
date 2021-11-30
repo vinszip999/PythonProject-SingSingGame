@@ -1,1 +1,0 @@
-__all__ = ['jeonnam', 'gangwondo'] # all 중요!!
